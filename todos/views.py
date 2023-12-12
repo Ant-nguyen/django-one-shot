@@ -47,3 +47,12 @@ def edit_todo(request,id):
         "form":form
     }
     return render(request,"todos/edit.html",context)
+
+
+def delete_todo(request,id):
+    todo = get_object_or_404(TodoList,id=id)
+    if request.method == "POST":
+        todo.delete()
+        return redirect("todo_list_list")
+
+    return render(request,"todos/delete.html")
