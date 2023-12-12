@@ -13,6 +13,7 @@ class TodoListAdmin(admin.ModelAdmin):
 @admin.register(TodoItem)
 class TodoItemAdmin(admin.ModelAdmin):
     list_display=[
+        "list",
         "task",
         "due_date",
     ]

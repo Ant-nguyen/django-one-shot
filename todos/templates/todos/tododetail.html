@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All the Todo Lists</title>
+    <title>Document</title>
 </head>
 <body>
     <header></header>
     <main>
         <div>
-            <h1>My Lists</h1>
+            <h1>{{details.name}}</h1>
+            <h2>Tasks</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Number of items</th>
+                        <th>Task</th>
+                        <th>Due Date</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for todo_list in todo_lists %}
+                    {% for detail in details.items.all %}
                     <tr>
                         <td>
-                            <a href={% url "todo_list_detail" todo_list.id %}> {{todo_list.name}}</a>
+                            {{detail.task}}
                         </td>
                         <td>
-                            {{todo_list.items.all|length}}
+                            {{detail.due_date}}
                         </td>
                     </tr>
                     {% endfor %}
