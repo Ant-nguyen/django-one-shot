@@ -30,7 +30,7 @@
                     {% for detail in details.items.all %}
                     <tr>
                         <td>
-                            {{detail.task}}
+                            <a href={% url "todo_item_update" detail.id %}>{{detail.task}}</a>
                         </td>
                         <td>
                             {{detail.due_date}}
