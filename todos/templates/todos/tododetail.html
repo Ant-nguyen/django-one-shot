@@ -6,10 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header>
+
+    </header>
     <main>
         <div>
             <h1>{{details.name}}</h1>
+            <p>
+                <a href={% url "todo_list_update" details.id %}>Edit</a>
+            </p>
             <h2>Tasks</h2>
             <table>
                 <thead>
